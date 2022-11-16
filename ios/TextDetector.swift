@@ -6,10 +6,10 @@ import VisionKit
 public class TextDetector: NSObject {
     
     @objc
-    func imageToText(_ imageData: NSString) {
-        //let ciImage = CIImage(data: imageData)
+    public static func imageToText(_ imageData: NSString) -> Dictionary<String, Any> {
+		let ciImage = CIImage(data: Data(base64Encoded: imageData as String)!)
         // TODO: implement https://github.com/a7medev/react-native-ml-kit/blob/main/text-recognition/ios/TextRecognition.m#L77
-        print("imageToText was called with imageData: \(imageData)")
+		return detectText(image: ciImage!.cgImage!)
     }
     
     public static func detectText(image: CGImage) -> Dictionary<String, Any> {
