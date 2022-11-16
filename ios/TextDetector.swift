@@ -4,6 +4,10 @@ import VisionKit
 
 @objc(TextDetector)
 public class TextDetector: NSObject {
+	
+	override init() {
+		super.init()
+	}
     
     @objc
     public static func imageToText(_ imageData: NSString) -> Dictionary<String, Any> {
@@ -70,6 +74,6 @@ public class TextDetector: NSObject {
         
         return rects
     }
-    
+	
 }
 
